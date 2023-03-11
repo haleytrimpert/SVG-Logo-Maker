@@ -13,9 +13,9 @@ function generateLogo(data) {
         return `
         <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
     
-      <${data.shape} cx="150" cy="100" r="80" fill= ${data.shapeColor}" />
+      <polygon points=""200,10 100,200 300,200" fill= "${data.shapeColor}" />
     
-      <text x="150" y="125" font-size="60" text-anchor="middle" fill= ${data.textColor}> ${data.text} </text>
+      <text x="150" y="125" font-size="60" text-anchor="middle" fill= "${data.textColor}"> ${data.text} </text>
     
     </svg>
         ` 
@@ -23,9 +23,9 @@ function generateLogo(data) {
         return `
         <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
     
-      <${data.shape} cx="150" cy="100" r="80" fill= ${data.shapeColor} />
+      <rect x="100" y="50" width="150" height= "150" fill= "${data.shapeColor}" />
     
-      <text x="150" y="125" font-size="60" text-anchor="middle" fill= ${data.textColor}> ${data.text} </text>
+      <text x="150" y="125" font-size="60" text-anchor="middle" fill= "${data.textColor}"> ${data.text} </text>
     
     </svg>
         ` 
