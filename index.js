@@ -17,7 +17,15 @@ function startLogo() {
     {
         type: 'input',
         name: 'text',
-        message: questions[0]
+        message: questions[0],
+        validate: function (answer) {
+            if (answer.length > 3) {
+                console.log("\nToo many characters. Try again.")
+                return false
+            } else {
+                return true
+            }
+        }
     },
     {
         type: 'input',
