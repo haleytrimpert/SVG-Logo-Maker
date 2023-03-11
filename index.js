@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateLogo = require("./utils/generateLogo");
 
 const questions = ["Enter the text for your logo. Max 3 characters.",
 "What text color would you like?",
@@ -7,10 +8,10 @@ const questions = ["Enter the text for your logo. Max 3 characters.",
 "What color would you like your shape to be?"];
 
 function writeToFile(fileName, data) {
-    fs.writeFileSync('Logo', fileName)
+    fs.writeFileSync('logo.svg', fileName)
 }
 
-function init() {
+function startLogo() {
     inquirer
   .prompt([
     {
@@ -35,4 +36,15 @@ function init() {
         message: questions[3]
     }
   ])
+
+  .then((data) => {
+    const file = generateLogo(data);
+    writeToFile(file, data);
+    console.log('Logo has been created!')
+  })
+  .catch((error) => {
+    console.log('Something went wrong :(' + error)
+  });
 }
+
+startLogo();
